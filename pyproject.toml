@@ -1,0 +1,27 @@
+[project]
+name = "machinelearning"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Ingrid Galje-Bol", email = "ingrid.bol@student.hu.nl" }
+]
+dependencies = [
+    "mads-datasets>=0.3.14",
+    "mltrainer>=0.1.128",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/machinelearning"]
