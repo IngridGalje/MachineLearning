@@ -1,7 +1,7 @@
 [project]
 name = "machinelearning"
 version = "0.1.0"
-description = "Add your description here"
+description = "machinelearning"
 authors = [
     { name = "Ingrid Galje-Bol", email = "ingrid.bol@student.hu.nl" }
 ]
