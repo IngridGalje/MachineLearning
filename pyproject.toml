@@ -16,6 +16,9 @@ requires-python = ">= 3.8"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[project.scripts]
+main = "machinelearning.main:main"
+
 [tool.rye]
 managed = true
 dev-dependencies = []
