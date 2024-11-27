@@ -1,0 +1,1 @@
+# hierin zet je alles om hardcode te voorkomen
