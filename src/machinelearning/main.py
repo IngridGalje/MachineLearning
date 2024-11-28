@@ -4,7 +4,9 @@ from typing import Iterator, Tuple, List
 import mads_datasets
 mads_datasets.__version__
 
-from . import Dataloader
+from filehandling import Dataloader
+
+dataloader = DataLoader(Path("data/images"))
 
 for file_path in walk_dir(image_folder):
         print(file_path)
