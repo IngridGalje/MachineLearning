@@ -163,6 +163,7 @@ markupsafe==3.0.2
     # via werkzeug
 matplotlib==3.9.2
     # via mlflow
+    # via seaborn
 matplotlib-inline==0.1.7
     # via ipykernel
     # via ipython
@@ -192,6 +193,7 @@ numpy==2.1.3
     # via pandas
     # via scikit-learn
     # via scipy
+    # via seaborn
     # via tensorboard
     # via tensorboardx
     # via torchtext
@@ -245,6 +247,7 @@ pandas==2.2.3
     # via mads-datasets
     # via mlflow
     # via ray
+    # via seaborn
     # via torch-tb-profiler
 parso==0.8.4
     # via jedi
@@ -325,6 +328,8 @@ scikit-learn==1.5.2
 scipy==1.14.1
     # via mlflow
     # via scikit-learn
+seaborn==0.13.2
+    # via machinelearning
 secretstorage==3.3.3
     # via keyring
 setuptools==75.5.0

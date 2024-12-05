@@ -4,31 +4,31 @@ from typing import Iterator, Tuple, List
 import mads_datasets
 mads_datasets.__version__
 
-# Gebruik absolute import
 from machinelearning.filehandling import DataLoader
+from machinelearning.visualisations.heatmap import HeatmapRuns
 from mads_datasets.settings import FileTypes
-
 from mads_datasets import DatasetFactoryProvider, DatasetType
+import logging
+import pandas as pd
+import os
 
-flowersfactory = DatasetFactoryProvider.create_factory(DatasetType.FLOWERS)
-flowersfactory.download_data()
+############ 0. Logging niveau en folder
+logging.basicConfig(filename='machinelearning.log', level=logging.INFO, 
+                    format='%(asctime)s:%(levelname)s:%(message)s')
 
-image_folder = flowersfactory.subfolder
-print(image_folder)
+############ 1. Read data 
+curr_folder = Path(os.path.abspath(__file__)).parent.parent.parent
+path = curr_folder / ".dev/runs.csv"
+df = pd.read_csv(path, sep=',')
+pd.set_option("display.max_columns", None)
+logging.info("Gegevens zijn ingelezen.")
 
-def dataloader(image_folder: Path):
-    dataloader = DataLoader(image_folder)
-    dataloader.walk_dir(image_folder)
-    dataloader.print_file_paths(limit=5)
+def heatmap(df):
+    heatmap = HeatmapRuns(df)
+    heatmap.plot_corr_matrix()
 
-
-#print filetypes
-for ft in FileTypes:
-    print(ft)    
-
-# src/mymodule/main.py
 def main():
-    dataloader(image_folder)
+    heatmap(df)
 
 if __name__ == '__main__':
     main()
