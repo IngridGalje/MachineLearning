@@ -37,7 +37,7 @@ Objective: gain experience with the impact of different parameters in machine le
 
 4. Download these packages:
 mltrainer
-madsdataset
+mads-dataset
 
 ## Preparations
 
